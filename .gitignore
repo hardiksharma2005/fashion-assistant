@@ -1,7 +1,10 @@
 .env
 __pycache__/
 *.pyc
+*.pyo
 chroma_db/
 *.egg-info/
 .DS_Store
-data/NEWDATASET/images/
+.venv/
+venv/
+*.log

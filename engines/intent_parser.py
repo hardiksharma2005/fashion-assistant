@@ -12,12 +12,21 @@ load_dotenv(dotenv_path=str(__import__('pathlib').Path(__file__).parent.parent /
 
 from config import GROQ_MODEL, OCCASION_MAP
 
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+def _get_groq_key():
+    # Try streamlit secrets first, then .env
+    try:
+        import streamlit as st
+        key = st.secrets.get("GROQ_API_KEY", "")
+        if key:
+            return key
+    except Exception:
+        pass
+    return os.getenv("GROQ_API_KEY", "")
 
 def _get_client():
-    key = os.getenv("GROQ_API_KEY", "")
+    key = _get_groq_key()
     if not key or key == "your_groq_api_key_here":
-        print("[Groq] WARNING: No valid API key found in .env")
+        print("[Groq] WARNING: No valid API key found")
         return None
     return Groq(api_key=key)
 

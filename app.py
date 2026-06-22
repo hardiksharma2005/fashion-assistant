@@ -7,6 +7,10 @@ from pathlib import Path
 import sys, re
 sys.path.insert(0, str(Path(__file__).parent))
 
+# ── Auto-ingest on cold start ──────────────────────────────────────────────────
+from startup import ensure_ingested
+ensure_ingested()
+
 # ── Page config (must be first) ────────────────────────────────────────────────
 st.set_page_config(
     page_title="Dare XAI · Fashion Assistant",

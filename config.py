@@ -14,7 +14,12 @@ CHROMA_DIR      = BASE_DIR / "chroma_db"
 ASSETS_DIR      = BASE_DIR / "assets"
 
 # ── API Keys ───────────────────────────────────────────────────────────────────
-GROQ_API_KEY    = os.getenv("GROQ_API_KEY", "")
+# Works from .env locally AND from Streamlit Cloud secrets
+try:
+    import streamlit as st
+    GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", "") or os.getenv("GROQ_API_KEY", "")
+except Exception:
+    GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 
 # ── Model Config ───────────────────────────────────────────────────────────────
 EMBEDDING_MODEL = "clip-ViT-B-32"          # sentence-transformers CLIP model
