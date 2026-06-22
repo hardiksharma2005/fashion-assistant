@@ -1,9 +1,5 @@
 # 👗 AI Fashion Outfit Recommendation System
 
-> **Dare XAI — ML & AI Engineer Intern Assignment**  
-> Built by: Hardik Sharma  
-> Stack: CLIP · ChromaDB · Groq (Llama 3.3 70B) · Streamlit
-
 ---
 
 ## 🎯 Overview
@@ -190,26 +186,3 @@ Every recommendation includes a Groq LLM-generated explanation that:
 - 👗 **Complete Outfits** — Hero + Bottom + Footwear + Layer + Accessory
 - 📦 **25 Curated Looks** — Expert-styled outfits as ground truth
 - ⚡ **Fast** — Sub-3 second recommendations via Groq + ChromaDB
-
----
-
-## 🔮 Future Improvements
-
-- [ ] Fine-tune CLIP on Indian fashion data (FashionCLIP)
-- [ ] Train a pairwise compatibility classifier on outfit co-occurrence
-- [ ] Graph-based recommendations (outfit nodes + compatibility edges)
-- [ ] Expand dataset to 1000+ products with web scraping
-- [ ] Add user feedback loop for preference learning
-- [ ] Deploy on Streamlit Cloud / HuggingFace Spaces
-
----
-
-## 📹 Demo Video
-
-[Link to YouTube / Google Drive demo]
-
----
-
-## 📄 License
-
-Built for educational purposes as part of the Dare XAI internship assignment.
